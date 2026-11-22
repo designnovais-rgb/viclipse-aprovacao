@@ -115,8 +115,8 @@
  {
   "id": "bisttw__05_t_palmas",
   "arquivo": "05_t_palmas.mp4",
-  "asset": "bisttw__05_t_palmas.mp4",
-  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/bisttw__05_t_palmas.mp4",
+  "asset": "bisttw__05_t_palmas_editado.mp4",
+  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/bisttw__05_t_palmas_editado.mp4",
   "streamer": "Bistecone",
   "estilo": "tweet",
   "titulo_curto": "Palmas",
@@ -129,16 +129,17 @@
    "missao",
    "reacao"
   ],
-  "texto_video": "pra que pagar terapia se eu posso seguir essa pagina kkkkkkk",
+  "texto_video": "?",
   "texto_rotulo": "Frase do post (no topo do vídeo)",
   "texto_editavel": true,
   "capa": "assets/capas/bisttw__05_t_palmas.jpg",
   "capa_arquivo": "assets/capas/bisttw__05_t_palmas.jpg",
   "dur": 32.0,
-  "status": "pendente",
-  "post": null,
+  "status": "postado",
+  "post": "6b030c2064ae992047df7ce9",
   "local": "PRONTOS_BISTECONE_TWEET/05_t_palmas.mp4",
-  "preview": "previews/bisttw__05_t_palmas.mp4"
+  "preview": "previews/bisttw__05_t_palmas_e.mp4",
+  "quando": null
  },
  {
   "id": "bisttw__06_t_porsche",
