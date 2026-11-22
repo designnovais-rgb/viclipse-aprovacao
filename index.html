@@ -57,18 +57,47 @@ button:active,.btn:active{transform:scale(.97)}
 .aviso{font-size:13px;font-weight:600;padding:9px 11px;border-radius:11px;background:var(--card2)}
 button:disabled{opacity:.5;cursor:default}
 @media (max-width:560px){header{padding:10px 12px}main{padding:12px}.grid{grid-template-columns:1fr;gap:16px}video{max-height:none}.logo small{display:none}}
+.cantos{margin-left:auto;display:flex;gap:8px}
+.ic{background:var(--card);color:var(--t);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-weight:700;font-size:13.5px;cursor:pointer}.ic:hover{border-color:var(--m)}
+.ic.alerta{border-color:var(--y);box-shadow:0 0 0 3px #facc1530}
+.filtroativo{display:none;align-items:center;gap:8px;font-size:13px;color:var(--m)}.lim{background:var(--card2);color:var(--t);border:1px solid var(--line);padding:3px 10px;font-size:12px;border-radius:999px}
+.veu{position:fixed;inset:0;background:#0009;z-index:40;opacity:0;pointer-events:none;transition:.2s}.veu.aberto{opacity:1;pointer-events:auto}
+.gaveta{position:fixed;top:0;right:0;bottom:0;width:min(360px,92vw);background:var(--bg2);border-left:1px solid var(--line);z-index:50;transform:translateX(105%);transition:transform .25s;padding:16px;overflow-y:auto;box-shadow:-20px 0 50px #0006}.gaveta.aberta{transform:none}
+.gtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.gtop h3{margin:0;font-size:18px}
+.mg{margin-bottom:18px}.mg h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--m)}
+.mi{display:flex;width:100%;justify-content:space-between;align-items:center;background:transparent;color:var(--t);border:1px solid transparent;border-radius:11px;padding:10px 12px;margin-bottom:3px;font-weight:600;font-size:14px;text-align:left}
+.mi:hover{background:var(--card2)}.mi.on{background:linear-gradient(135deg,#ff3b3b26,#ff6a3b1a);border-color:#ff3b3b66}
+.mi em{font-style:normal;font-size:12px;color:var(--m);background:var(--card2);border-radius:999px;padding:1px 9px}
+@media (max-width:560px){.ic span{display:none}}
 </style>
 </head>
 <body>
 <header>
-  <div class="bar"><div class="logo"><b>▶</b><div>VIclipse<small>Aprovação de cortes</small></div></div><button class="tab" id="bchave">🔑 Configurar chave</button></div>
+  <div class="bar">
+    <div class="logo"><b>▶</b><div>VIclipse<small>Aprovação de cortes</small></div></div>
+    <div class="cantos"><button class="ic" id="bcats" title="Categorias">☰ <span>Categorias</span></button><button class="ic" id="bconf" title="Configurações">⚙️</button></div>
+  </div>
   <div class="tabs" id="tabs"></div>
-  <div class="filters" id="filters"></div>
+  <div class="filtroativo" id="filtroativo"></div>
 </header>
+<div class="veu" id="veu"></div>
+<aside class="gaveta" id="gaveta">
+  <div class="gtop"><h3 id="gtitulo">Categorias</h3><button class="ic" id="fechag">✕</button></div>
+  <div id="pcats"><div id="menucats"></div></div>
+  <div id="pconf" style="display:none">
+    <div class="mg"><h4>🔑 Chave do GitHub</h4>
+      <p class="hint">Necessária para o botão Aprovar/Reprovar funcionar neste aparelho. Começa com <b>github_pat_</b>. Fica guardada só aqui, no seu navegador.</p>
+      <div id="statuschave" style="font-weight:700;margin:8px 0"></div>
+      <input id="inchave" type="password" autocomplete="off" placeholder="github_pat_...">
+      <div class="btns" style="margin-top:10px"><button class="ok" id="salvachave" style="flex:1">Salvar chave</button><button class="sec" id="limpachave" style="flex:0 0 auto">Remover</button></div>
+      <div id="msgchave" class="hint" style="margin-top:8px"></div>
+    </div>
+  </div>
+</aside>
 <main>
-  <p class="hint">Assista, edite o texto, a legenda ou o tempo (início e fim) e clique em <b>Aprovar e postar</b>. Você continua aqui: o robô aplica as edições, posta no Instagram e no YouTube pelo Zernio e o resultado aparece no próprio card. Na primeira vez em cada aparelho, configure a chave em 🔑.</p>
+  <p class="hint">Assista, edite o texto, a legenda ou o tempo (início e fim) e clique em <b>Aprovar e postar</b>. Você continua aqui: o robô aplica as edições, posta no Instagram e no YouTube pelo Zernio e o resultado aparece no próprio card. Na primeira vez em cada aparelho, configure a chave em ⚙️ (canto superior direito).</p>
   <div class="grid" id="grid"></div>
 </main>
-<script src="app.js?v=7"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>

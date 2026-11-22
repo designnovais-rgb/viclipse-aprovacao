@@ -18,6 +18,8 @@ async function carregar() {
   CAT = await r.json();
   desenhaTopo(); desenha();
 }
+let estilo = "todos";
+const ESTN = { noticia: "Notícia (tarja vermelha)", meme: "Faixa branca", tweet: "Estilo Twitter", outro: "Outros" };
 function desenhaTopo() {
   const t = document.getElementById("tabs");
   t.innerHTML = STATUS.map(([k, n]) => {
@@ -25,14 +27,33 @@ function desenhaTopo() {
     return `<button class="tab ${aba === k ? "on" : ""}" data-k="${k}">${n} (${q})</button>`;
   }).join("");
   t.querySelectorAll(".tab").forEach(b => b.onclick = () => { aba = b.dataset.k; desenhaTopo(); desenha(); });
-  const ss = ["todos", ...new Set(CAT.map(c => c.streamer))];
-  const f = document.getElementById("filters");
-  f.innerHTML = ss.map(s => `<button class="chip ${streamer === s ? "on" : ""}" data-s="${esc(s)}">${s === "todos" ? "Todos" : esc(s)}</button>`).join("");
-  f.querySelectorAll(".chip").forEach(b => b.onclick = () => { streamer = b.dataset.s; desenhaTopo(); desenha(); });
+  const base = CAT.filter(c => aba === "todos" || c.status === aba);
+  const cont = (campo, v) => base.filter(c => (v === "todos" || c[campo] === v)).length;
+  const ss = ["todos", ...new Set(CAT.map(c => c.streamer))], es = ["todos", ...new Set(CAT.map(c => c.estilo))];
+  const grupo = (tit, lista, campo, atual, nome) => `<div class="mg"><h4>${tit}</h4>` + lista.map(v =>
+    `<button class="mi ${atual === v ? "on" : ""}" data-c="${campo}" data-v="${esc(v)}"><span>${v === "todos" ? "Todos" : esc(nome(v))}</span><em>${cont(campo, v)}</em></button>`).join("") + `</div>`;
+  document.getElementById("menucats").innerHTML =
+    grupo("🎙️ Streamer", ss, "streamer", streamer, v => v) + grupo("🎬 Estilo do corte", es, "estilo", estilo, v => ESTN[v] || v);
+  document.querySelectorAll("#menucats .mi").forEach(b => b.onclick = () => {
+    if (b.dataset.c === "streamer") streamer = b.dataset.v; else estilo = b.dataset.v;
+    desenhaTopo(); desenha(); fechaMenu();
+  });
+  const f = document.getElementById("filtroativo"), at = [];
+  if (streamer !== "todos") at.push(streamer); if (estilo !== "todos") at.push(ESTN[estilo] || estilo);
+  f.innerHTML = at.length ? `Filtrando: <b>${esc(at.join(" · "))}</b> <button class="lim" id="limpa">limpar ✕</button>` : "";
+  f.style.display = at.length ? "flex" : "none";
+  const l = document.getElementById("limpa"); if (l) l.onclick = () => { streamer = "todos"; estilo = "todos"; desenhaTopo(); desenha(); };
 }
+function abreMenu(qual) {
+  document.getElementById("gaveta").classList.add("aberta"); document.getElementById("veu").classList.add("aberto");
+  document.getElementById("pcats").style.display = qual === "cats" ? "block" : "none";
+  document.getElementById("pconf").style.display = qual === "conf" ? "block" : "none";
+  document.getElementById("gtitulo").textContent = qual === "cats" ? "Categorias" : "Configurações";
+}
+function fechaMenu() { document.getElementById("gaveta").classList.remove("aberta"); document.getElementById("veu").classList.remove("aberto"); }
 function desenha() {
   const g = document.getElementById("grid");
-  const itens = CAT.filter(c => (aba === "todos" || c.status === aba) && (streamer === "todos" || c.streamer === streamer));
+  const itens = CAT.filter(c => (aba === "todos" || c.status === aba) && (streamer === "todos" || c.streamer === streamer) && (estilo === "todos" || c.estilo === estilo));
   if (!itens.length) { g.innerHTML = `<div class="empty">Nada aqui.</div>`; return; }
   itens.sort((a, b) => ehNovo(b) - ehNovo(a));
   g.innerHTML = itens.map(card).join("");
@@ -147,29 +168,25 @@ async function acompanhar(c, el, num, n) {
     setTimeout(carregar, 20000);
   } catch (e) { acompanhar(c, el, num, n + 1); }
 }
-// caixa amarela com campo para colar a chave (sem janelas de prompt, que alguns navegadores bloqueiam)
-function abrirChave(forcar) {
-  let f = document.getElementById("faixachave");
-  if (!f) {
-    f = document.createElement("div"); f.id = "faixachave";
-    f.style.cssText = "background:#facc15;color:#1a1300;padding:12px 16px;border-radius:10px;margin:0 0 14px;font-weight:600;display:flex;gap:8px;align-items:center;flex-wrap:wrap";
-    f.innerHTML = '<span>Cole a sua chave do GitHub (começa com github_pat_):</span>' +
-      '<input id="inchave" type="password" autocomplete="off" placeholder="github_pat_..." style="flex:1;min-width:220px;background:#fff;color:#111;border:1px solid #a88a00">' +
-      '<button class="ok" id="salvachave">Salvar chave</button><span id="msgchave" style="font-weight:500"></span>';
-    document.querySelector("main").prepend(f);
-    document.getElementById("salvachave").onclick = () => {
-      const v = document.getElementById("inchave").value.trim(), m = document.getElementById("msgchave");
-      if (!v.startsWith("github_pat_") && !v.startsWith("ghp_")) { m.textContent = "Essa não parece uma chave do GitHub."; return; }
-      try { localStorage.setItem(KTOK, v); } catch (e) { m.textContent = "Este navegador não deixou salvar. Tente outro navegador."; return; }
-      m.textContent = "Chave salva!"; setTimeout(() => { f.remove(); marcaChave(); }, 800);
-    };
-  }
-  document.getElementById("inchave").value = chave();
-  f.scrollIntoView({ behavior: "smooth" }); document.getElementById("inchave").focus();
+// chave do GitHub: fica guardada nas Configuracoes (canto superior direito)
+function abrirChave() {
+  abreMenu("conf"); const i = document.getElementById("inchave"); i.value = chave(); setTimeout(() => i.focus(), 250);
 }
 function marcaChave() {
-  const b = document.getElementById("bchave"); if (b) b.textContent = chave() ? "🔑 Chave salva (trocar)" : "🔑 Configurar chave";
-  if (!chave()) abrirChave();
+  const ok = !!chave(), st = document.getElementById("statuschave");
+  st.textContent = ok ? "✔ Chave salva neste aparelho" : "Nenhuma chave salva"; st.style.color = ok ? "var(--g)" : "var(--y)";
+  document.getElementById("bconf").classList.toggle("alerta", !ok);
 }
-document.getElementById("bchave").onclick = abrirChave; marcaChave();
+document.getElementById("salvachave").onclick = () => {
+  const v = document.getElementById("inchave").value.trim(), m = document.getElementById("msgchave");
+  if (!v.startsWith("github_pat_") && !v.startsWith("ghp_")) { m.textContent = "Essa não parece uma chave do GitHub."; m.style.color = "var(--r)"; return; }
+  try { localStorage.setItem(KTOK, v); } catch (e) { m.textContent = "Este navegador não deixou salvar. Tente outro."; m.style.color = "var(--r)"; return; }
+  m.textContent = "Chave salva!"; m.style.color = "var(--g)"; marcaChave(); setTimeout(() => { m.textContent = ""; fechaMenu(); }, 900);
+};
+document.getElementById("limpachave").onclick = () => { try { localStorage.removeItem(KTOK); } catch (e) {} document.getElementById("inchave").value = ""; marcaChave(); };
+document.getElementById("bcats").onclick = () => abreMenu("cats");
+document.getElementById("bconf").onclick = () => abreMenu("conf");
+document.getElementById("veu").onclick = fechaMenu; document.getElementById("fechag").onclick = fechaMenu;
+document.addEventListener("keydown", e => { if (e.key === "Escape") fechaMenu(); });
+marcaChave();
 carregar();
