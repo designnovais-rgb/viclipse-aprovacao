@@ -131,24 +131,29 @@ async function acompanhar(c, el, num, n) {
     setTimeout(carregar, 20000);
   } catch (e) { acompanhar(c, el, num, n + 1); }
 }
-function abrirChave() {
-  const atual = chave();
-  const v = prompt("Cole aqui a sua chave de aprovação do GitHub (começa com github_pat_). Ela fica salva só neste aparelho.\n\nPara apagar, deixe em branco e confirme.", atual);
-  if (v === null) return;
-  try { v.trim() ? localStorage.setItem(KTOK, v.trim()) : localStorage.removeItem(KTOK); } catch (e) { alert("Este navegador não deixou salvar a chave."); }
-  marcaChave();
+// caixa amarela com campo para colar a chave (sem janelas de prompt, que alguns navegadores bloqueiam)
+function abrirChave(forcar) {
+  let f = document.getElementById("faixachave");
+  if (!f) {
+    f = document.createElement("div"); f.id = "faixachave";
+    f.style.cssText = "background:#facc15;color:#1a1300;padding:12px 16px;border-radius:10px;margin:0 0 14px;font-weight:600;display:flex;gap:8px;align-items:center;flex-wrap:wrap";
+    f.innerHTML = '<span>Cole a sua chave do GitHub (começa com github_pat_):</span>' +
+      '<input id="inchave" type="password" autocomplete="off" placeholder="github_pat_..." style="flex:1;min-width:220px;background:#fff;color:#111;border:1px solid #a88a00">' +
+      '<button class="ok" id="salvachave">Salvar chave</button><span id="msgchave" style="font-weight:500"></span>';
+    document.querySelector("main").prepend(f);
+    document.getElementById("salvachave").onclick = () => {
+      const v = document.getElementById("inchave").value.trim(), m = document.getElementById("msgchave");
+      if (!v.startsWith("github_pat_") && !v.startsWith("ghp_")) { m.textContent = "Essa não parece uma chave do GitHub."; return; }
+      try { localStorage.setItem(KTOK, v); } catch (e) { m.textContent = "Este navegador não deixou salvar. Tente outro navegador."; return; }
+      m.textContent = "Chave salva!"; setTimeout(() => { f.remove(); marcaChave(); }, 800);
+    };
+  }
+  document.getElementById("inchave").value = chave();
+  f.scrollIntoView({ behavior: "smooth" }); document.getElementById("inchave").focus();
 }
 function marcaChave() {
-  const b = document.getElementById("bchave"); if (b) b.textContent = chave() ? "🔑 Chave salva" : "🔑 Configurar chave";
-  let f = document.getElementById("faixachave");
-  if (!chave()) {
-    if (!f) {
-      f = document.createElement("div"); f.id = "faixachave";
-      f.style.cssText = "background:#facc15;color:#1a1300;padding:12px 16px;border-radius:10px;margin:0 0 14px;font-weight:600;display:flex;gap:10px;align-items:center;flex-wrap:wrap";
-      f.innerHTML = 'Para aprovar sem sair da página, cole a sua chave do GitHub aqui: <button class="ok" id="bchave2">🔑 Colar a chave</button>';
-      document.querySelector("main").prepend(f); document.getElementById("bchave2").onclick = abrirChave;
-    }
-  } else if (f) f.remove();
+  const b = document.getElementById("bchave"); if (b) b.textContent = chave() ? "🔑 Chave salva (trocar)" : "🔑 Configurar chave";
+  if (!chave()) abrirChave();
 }
 document.getElementById("bchave").onclick = abrirChave; marcaChave();
 carregar();
