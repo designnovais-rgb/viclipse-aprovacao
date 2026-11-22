@@ -27,7 +27,7 @@ function desenhaTopo() {
   t.querySelectorAll(".tab").forEach(b => b.onclick = () => { aba = b.dataset.k; desenhaTopo(); desenha(); });
   const ss = ["todos", ...new Set(CAT.map(c => c.streamer))];
   const f = document.getElementById("filters");
-  f.innerHTML = ss.map(s => `<button class="chip ${streamer === s ? "on" : ""}" data-s="${esc(s)}">${s === "todos" ? "Todos os streamers" : esc(s)}</button>`).join("");
+  f.innerHTML = ss.map(s => `<button class="chip ${streamer === s ? "on" : ""}" data-s="${esc(s)}">${s === "todos" ? "Todos" : esc(s)}</button>`).join("");
   f.querySelectorAll(".chip").forEach(b => b.onclick = () => { streamer = b.dataset.s; desenhaTopo(); desenha(); });
 }
 function desenha() {
@@ -38,37 +38,44 @@ function desenha() {
   g.innerHTML = itens.map(card).join("");
   itens.forEach(liga);
 }
+const EST = { noticia: "Notícia", meme: "Faixa branca", tweet: "Twitter", outro: "Original" };
 function card(c) {
-  const editTexto = c.texto_editavel;
-  return `<div class="card ${ehNovo(c) ? "novo" : ""}" id="c-${c.id}">
-  <video controls preload="metadata" playsinline ${c.capa ? `poster="${esc(c.capa)}"` : ""} src="${esc(c.preview || c.url)}"></video>
+  const n = ehNovo(c);
+  return `<article class="card ${n ? "novo" : ""}" id="c-${c.id}">
+  <div class="vwrap">
+    <video controls preload="metadata" playsinline ${c.capa ? `poster="${esc(c.capa)}"` : ""} src="${esc(c.preview || c.url)}"></video>
+    <div class="chips"><span class="st ${c.status}">${esc(c.status)}</span>${n ? '<span class="tagnovo">NOVO</span>' : ""}</div>
+    <span class="durtag">${fmt(c.dur)} s</span>
+  </div>
   <div class="body">
-    <div class="top"><span class="name">${ehNovo(c) ? '<span class="tagnovo">NOVO</span> ' : ""}${esc(c.titulo_curto || c.arquivo)}</span><span class="st ${c.status}">${c.status}</span></div>
-    <div class="dur">${esc(c.streamer)} · ${esc(c.estilo)} · ${fmt(c.dur)} s${c.post ? ` · post ${esc(c.post)}` : ""}</div>
-    ${editTexto ? `<div><label>${esc(c.texto_rotulo || "Texto no vídeo")}</label><textarea data-f="texto_video">${esc(c.texto_video)}</textarea></div>` : ""}
-    <div><label>Título (YouTube Shorts)</label><input data-f="titulo" value="${esc(c.titulo)}"></div>
-    <div><label>Legenda</label><textarea data-f="legenda">${esc(c.legenda)}</textarea></div>
-    <div><label>Hashtags (máx. 5, separadas por espaço)</label><input data-f="hashtags" value="${esc((c.hashtags || []).map(h => "#" + h).join(" "))}"></div>
-    <div class="trim">
-      <div><label>Início (s)</label><input type="number" step="0.1" min="0" data-f="ini" value="0"></div>
-      <button class="sec" data-a="mi">⏱ aqui</button>
-      <div><label>Fim (s)</label><input type="number" step="0.1" min="0" data-f="fim" value="${fmt(c.dur)}"></div>
-      <button class="sec" data-a="mf">⏱ aqui</button>
-    </div>
-    <div class="row"><div><label>Quando postar</label><input type="datetime-local" data-f="quando"></div></div>
-    <div class="hint">Deixe "quando postar" vazio para postar na hora. Use ⏱ para marcar o tempo atual do vídeo.</div>
+    <h3 class="name">${esc(c.titulo_curto || c.arquivo)}</h3>
+    <div class="meta"><span>${esc(c.streamer)}</span><i></i><span>${esc(EST[c.estilo] || c.estilo)}</span>${c.post ? `<i></i><span>post ${esc(c.post)}</span>` : ""}</div>
+    ${c.texto_editavel ? `<div class="f destaque"><label>🎬 ${esc(c.texto_rotulo || "Texto no vídeo")}</label><textarea data-f="texto_video" rows="2">${esc(c.texto_video)}</textarea></div>` : ""}
+    <details class="edit"><summary>✏️ Legenda, hashtags, tempo e horário</summary>
+      <div class="f"><label>Título (YouTube Shorts)</label><input data-f="titulo" value="${esc(c.titulo)}"></div>
+      <div class="f"><label>Legenda</label><textarea data-f="legenda">${esc(c.legenda)}</textarea></div>
+      <div class="f"><label>Hashtags (máx. 5)</label><input data-f="hashtags" value="${esc((c.hashtags || []).map(h => "#" + h).join(" "))}"></div>
+      <div class="trim">
+        <div class="f"><label>Início (s)</label><input type="number" step="0.1" min="0" data-f="ini" value="0"></div>
+        <button class="sec sm" data-a="mi" title="Usar o tempo atual do vídeo">⏱</button>
+        <div class="f"><label>Fim (s)</label><input type="number" step="0.1" min="0" data-f="fim" value="${fmt(c.dur)}"></div>
+        <button class="sec sm" data-a="mf" title="Usar o tempo atual do vídeo">⏱</button>
+      </div>
+      <div class="f"><label>Quando postar</label><input type="datetime-local" data-f="quando"></div>
+      <div class="hint">Deixe o horário vazio para postar na hora. ⏱ marca o tempo atual do vídeo.</div>
+    </details>
     <div class="btns">
       ${c.status !== "postado" ? `<button class="ok" data-a="ap">✔ Aprovar e postar</button>` : ""}
       ${c.status === "pendente" ? `<button class="no" data-a="rp">✖ Reprovar</button>` : ""}
-      <button class="sec" data-a="pv">▶ Prévia do corte</button>
+      <button class="sec" data-a="pv">▶ Prévia</button>
       <a class="btn sec" href="${esc(c.url)}" download="${esc(c.arquivo)}">⬇ Baixar</a>
     </div>
-  </div></div>`;
+  </div></article>`;
 }
 function val(el, f) { return el.querySelector(`[data-f="${f}"]`); }
 function liga(c) {
   const el = document.getElementById("c-" + c.id), v = el.querySelector("video");
-  v.addEventListener("play", () => { marcaVisto(c); el.classList.remove("novo"); const t = el.querySelector(".tagnovo"); if (t) t.remove(); }, { once: true });
+  v.addEventListener("play", () => { marcaVisto(c); el.classList.remove("novo"); el.querySelectorAll(".tagnovo").forEach(t => t.remove()); }, { once: true });
   el.querySelector('[data-a="mi"]').onclick = () => val(el, "ini").value = fmt(v.currentTime);
   el.querySelector('[data-a="mf"]').onclick = () => val(el, "fim").value = fmt(v.currentTime);
   el.querySelector('[data-a="pv"]').onclick = () => {
