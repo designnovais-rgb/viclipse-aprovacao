@@ -75,6 +75,8 @@ function card(c) {
 function val(el, f) { return el.querySelector(`[data-f="${f}"]`); }
 function liga(c) {
   const el = document.getElementById("c-" + c.id), v = el.querySelector("video");
+  // so um video toca por vez: ao dar play, pausa os outros
+  v.addEventListener("play", () => document.querySelectorAll("video").forEach(o => { if (o !== v && !o.paused) o.pause(); }));
   v.addEventListener("play", () => { marcaVisto(c); el.classList.remove("novo"); el.querySelectorAll(".tagnovo").forEach(t => t.remove()); }, { once: true });
   el.querySelector('[data-a="mi"]').onclick = () => val(el, "ini").value = fmt(v.currentTime);
   el.querySelector('[data-a="mf"]').onclick = () => val(el, "fim").value = fmt(v.currentTime);
