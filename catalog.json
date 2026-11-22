@@ -2,26 +2,22 @@
  {
   "id": "bisttw__01_t_cheirou",
   "arquivo": "01_t_cheirou.mp4",
-  "asset": "bisttw__01_t_cheirou.mp4",
-  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/bisttw__01_t_cheirou.mp4",
+  "asset": "bisttw__01_t_cheirou_editado.mp4",
+  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/bisttw__01_t_cheirou_editado.mp4",
   "streamer": "Bistecone",
   "estilo": "tweet",
   "titulo_curto": "Cheirou",
-  "titulo": "O CARA DO FUNDO CHEIROU DEMAIS NO GTA 6 😂 #Shorts",
-  "legenda": "Bistecone mudando o visual e o NPC do fundo roubou a cena: \"aquele cara cheirou muito, velho\" 😂\nMarca quem é assim!\n\nFonte: @bistecone",
+  "titulo": "teste",
+  "legenda": "teste",
   "hashtags": [
-   "gta6",
-   "gtavi",
-   "bistecone",
-   "humor",
-   "gameplay"
+   "gta6"
   ],
-  "texto_video": "pra que pagar terapia se eu posso seguir essa pagina kkkkkkk",
+  "texto_video": "pra que pagar terapia se eu posso seguir essa pagina kkkkkkk 😂 (teste de edição)",
   "texto_rotulo": "Frase do post (no topo do vídeo)",
   "texto_editavel": true,
   "capa": "assets/capas/bisttw__01_t_cheirou.jpg",
   "capa_arquivo": "assets/capas/bisttw__01_t_cheirou.jpg",
-  "dur": 18.0,
+  "dur": 10.0,
   "status": "pendente",
   "post": null,
   "local": "PRONTOS_BISTECONE_TWEET/01_t_cheirou.mp4"
