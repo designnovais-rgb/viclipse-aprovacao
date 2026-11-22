@@ -86,7 +86,58 @@ function pedido(c, el, acao) {
   };
   const titulo = `[${acao}] ${c.arquivo}`;
   const corpo = "Pedido gerado pelo site de aprovação. Não edite o bloco abaixo.\n\n```json\n" + JSON.stringify(d, null, 1) + "\n```\n";
-  const url = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(titulo)}&body=${encodeURIComponent(corpo)}`;
-  window.open(url, "_blank");
+  const msg = acao === "REPROVAR" ? `Reprovar "${c.titulo_curto}"?` : `Aprovar e postar "${c.titulo_curto}" ${q ? "em " + q.replace("T", " às ") : "AGORA"} no Instagram e no YouTube?`;
+  if (!confirm(msg)) return;
+  enviar(c, el, titulo, corpo, acao);
 }
+
+// ---------- envio direto pela pagina (sem sair do site) ----------
+const KTOK = "viclipse_chave";
+function chave() { try { return localStorage.getItem(KTOK) || ""; } catch (e) { return ""; } }
+function aviso(el, txt, cor) {
+  let a = el.querySelector(".aviso");
+  if (!a) { a = document.createElement("div"); a.className = "aviso"; el.querySelector(".btns").after(a); }
+  a.style.color = cor || "var(--m)"; a.innerHTML = txt;
+}
+async function gh(caminho, opt = {}) {
+  const r = await fetch("https://api.github.com/repos/" + REPO + caminho, {
+    ...opt, headers: { "Authorization": "Bearer " + chave(), "Accept": "application/vnd.github+json", "Content-Type": "application/json" }
+  });
+  if (!r.ok) throw new Error(r.status === 401 || r.status === 403 ? "chave inválida ou sem permissão" : "erro " + r.status);
+  return r.json();
+}
+async function enviar(c, el, titulo, corpo, acao) {
+  if (!chave()) { abrirChave(); return; }
+  el.querySelectorAll("button").forEach(b => b.disabled = true);
+  aviso(el, acao === "REPROVAR" ? "Enviando reprovação…" : "⏳ Enviando aprovação…");
+  try {
+    const iss = await gh("/issues", { method: "POST", body: JSON.stringify({ title: titulo, body: corpo }) });
+    aviso(el, acao === "REPROVAR" ? "Reprovação enviada. Atualizando…" : "✔ Aprovado! O robô está editando e postando (cerca de 1 minuto)…", "var(--b)");
+    acompanhar(c, el, iss.number, 0);
+  } catch (e) {
+    aviso(el, "Não consegui enviar: " + e.message + ". Confira a chave em 🔑.", "var(--r)");
+    el.querySelectorAll("button").forEach(b => b.disabled = false);
+  }
+}
+async function acompanhar(c, el, num, n) {
+  if (n > 40) { aviso(el, "O robô está demorando. Recarregue a página daqui a pouco.", "var(--y)"); return; }
+  await new Promise(r => setTimeout(r, 10000));
+  try {
+    const cm = await gh(`/issues/${num}/comments`);
+    if (!cm.length) return acompanhar(c, el, num, n + 1);
+    const txt = cm[cm.length - 1].body || "";
+    const ok = !/^Não|Falta|não está/.test(txt);
+    aviso(el, esc(txt).replace(/`/g, ""), ok ? "var(--g)" : "var(--r)");
+    setTimeout(carregar, 20000);
+  } catch (e) { acompanhar(c, el, num, n + 1); }
+}
+function abrirChave() {
+  const atual = chave();
+  const v = prompt("Cole aqui a sua chave de aprovação do GitHub (começa com github_pat_). Ela fica salva só neste aparelho.\n\nPara apagar, deixe em branco e confirme.", atual);
+  if (v === null) return;
+  try { v.trim() ? localStorage.setItem(KTOK, v.trim()) : localStorage.removeItem(KTOK); } catch (e) { alert("Este navegador não deixou salvar a chave."); }
+  marcaChave();
+}
+function marcaChave() { const b = document.getElementById("bchave"); if (b) b.textContent = chave() ? "🔑 Chave salva" : "🔑 Configurar chave"; }
+document.getElementById("bchave").onclick = abrirChave; marcaChave();
 carregar();
