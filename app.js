@@ -138,6 +138,17 @@ function abrirChave() {
   try { v.trim() ? localStorage.setItem(KTOK, v.trim()) : localStorage.removeItem(KTOK); } catch (e) { alert("Este navegador não deixou salvar a chave."); }
   marcaChave();
 }
-function marcaChave() { const b = document.getElementById("bchave"); if (b) b.textContent = chave() ? "🔑 Chave salva" : "🔑 Configurar chave"; }
+function marcaChave() {
+  const b = document.getElementById("bchave"); if (b) b.textContent = chave() ? "🔑 Chave salva" : "🔑 Configurar chave";
+  let f = document.getElementById("faixachave");
+  if (!chave()) {
+    if (!f) {
+      f = document.createElement("div"); f.id = "faixachave";
+      f.style.cssText = "background:#facc15;color:#1a1300;padding:12px 16px;border-radius:10px;margin:0 0 14px;font-weight:600;display:flex;gap:10px;align-items:center;flex-wrap:wrap";
+      f.innerHTML = 'Para aprovar sem sair da página, cole a sua chave do GitHub aqui: <button class="ok" id="bchave2">🔑 Colar a chave</button>';
+      document.querySelector("main").prepend(f); document.getElementById("bchave2").onclick = abrirChave;
+    }
+  } else if (f) f.remove();
+}
 document.getElementById("bchave").onclick = abrirChave; marcaChave();
 carregar();
