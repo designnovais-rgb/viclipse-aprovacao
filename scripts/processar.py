@@ -88,6 +88,11 @@ if precisa:
     sh("gh", "release", "upload", TAG, saida, "--repo", REPO, "--clobber")
     item["asset"] = os.path.basename(saida); item["url"] = f"https://github.com/{REPO}/releases/download/{TAG}/{item['asset']}"
     item["dur"] = round(probe(saida, "duration"), 2)
+    # versao leve servida pelo proprio site (o celular nao toca o link da release)
+    os.makedirs("previews", exist_ok=True); pv = f"previews/{item['id']}_e.mp4"
+    sh("ffmpeg", "-y", "-v", "error", "-i", saida, "-vf", "scale=540:-2", "-r", "30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "27",
+       "-maxrate", "1200k", "-bufsize", "2400k", "-pix_fmt", "yuv420p", "-profile:v", "main", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", pv)
+    item["preview"] = pv
     if mudou_texto: item["texto_video"] = novo_texto
 
 for k in ("titulo", "legenda"):

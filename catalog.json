@@ -25,7 +25,8 @@
   "status": "postado",
   "post": "6b02dc61d39976778c0a9803",
   "local": "PRONTOS_BISTECONE_TWEET/01_t_cheirou.mp4",
-  "quando": null
+  "quando": null,
+  "preview": "previews/bisttw__01_t_cheirou.mp4"
  },
  {
   "id": "bisttw__02_t_raul2",
@@ -52,7 +53,8 @@
   "dur": 40.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE_TWEET/02_t_raul2.mp4"
+  "local": "PRONTOS_BISTECONE_TWEET/02_t_raul2.mp4",
+  "preview": "previews/bisttw__02_t_raul2.mp4"
  },
  {
   "id": "bisttw__03_t_minuto_silencio",
@@ -79,7 +81,8 @@
   "dur": 23.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE_TWEET/03_t_minuto_silencio.mp4"
+  "local": "PRONTOS_BISTECONE_TWEET/03_t_minuto_silencio.mp4",
+  "preview": "previews/bisttw__03_t_minuto_silencio.mp4"
  },
  {
   "id": "bisttw__04_t_carro_mae",
@@ -106,7 +109,8 @@
   "dur": 21.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE_TWEET/04_t_carro_mae.mp4"
+  "local": "PRONTOS_BISTECONE_TWEET/04_t_carro_mae.mp4",
+  "preview": "previews/bisttw__04_t_carro_mae.mp4"
  },
  {
   "id": "bisttw__05_t_palmas",
@@ -133,7 +137,8 @@
   "dur": 32.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE_TWEET/05_t_palmas.mp4"
+  "local": "PRONTOS_BISTECONE_TWEET/05_t_palmas.mp4",
+  "preview": "previews/bisttw__05_t_palmas.mp4"
  },
  {
   "id": "bisttw__06_t_porsche",
@@ -160,7 +165,8 @@
   "dur": 27.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE_TWEET/06_t_porsche.mp4"
+  "local": "PRONTOS_BISTECONE_TWEET/06_t_porsche.mp4",
+  "preview": "previews/bisttw__06_t_porsche.mp4"
  },
  {
   "id": "bist2__01_b_recorde100k",
@@ -187,7 +193,8 @@
   "dur": 22.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_BISTECONE_2/01_b_recorde100k.mp4"
+  "local": "PRONTOS_BISTECONE_2/01_b_recorde100k.mp4",
+  "preview": "previews/bist2__01_b_recorde100k.mp4"
  },
  {
   "id": "bist2__02_b_morreu",
@@ -214,7 +221,8 @@
   "dur": 32.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_BISTECONE_2/02_b_morreu.mp4"
+  "local": "PRONTOS_BISTECONE_2/02_b_morreu.mp4",
+  "preview": "previews/bist2__02_b_morreu.mp4"
  },
  {
   "id": "bist2__03_b_papelao",
@@ -241,7 +249,8 @@
   "dur": 45.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_BISTECONE_2/03_b_papelao.mp4"
+  "local": "PRONTOS_BISTECONE_2/03_b_papelao.mp4",
+  "preview": "previews/bist2__03_b_papelao.mp4"
  },
  {
   "id": "bist2__04_b_rua",
@@ -268,7 +277,8 @@
   "dur": 43.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_BISTECONE_2/04_b_rua.mp4"
+  "local": "PRONTOS_BISTECONE_2/04_b_rua.mp4",
+  "preview": "previews/bist2__04_b_rua.mp4"
  },
  {
   "id": "bist2__05_b_tatuagens",
@@ -295,7 +305,8 @@
   "dur": 32.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_BISTECONE_2/05_b_tatuagens.mp4"
+  "local": "PRONTOS_BISTECONE_2/05_b_tatuagens.mp4",
+  "preview": "previews/bist2__05_b_tatuagens.mp4"
  },
  {
   "id": "bist2__06_b_policia",
@@ -322,7 +333,8 @@
   "dur": 32.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_BISTECONE_2/06_b_policia.mp4"
+  "local": "PRONTOS_BISTECONE_2/06_b_policia.mp4",
+  "preview": "previews/bist2__06_b_policia.mp4"
  },
  {
   "id": "bist1__01_funeral_do_cervo",
@@ -347,7 +359,8 @@
   "dur": 33.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE/01_funeral_do_cervo.mp4"
+  "local": "PRONTOS_BISTECONE/01_funeral_do_cervo.mp4",
+  "preview": "previews/bist1__01_funeral_do_cervo.mp4"
  },
  {
   "id": "bist1__02_caminhao_roubado",
@@ -372,7 +385,8 @@
   "dur": 25.3,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE/02_caminhao_roubado.mp4"
+  "local": "PRONTOS_BISTECONE/02_caminhao_roubado.mp4",
+  "preview": "previews/bist1__02_caminhao_roubado.mp4"
  },
  {
   "id": "bist1__03_primeiro_dia_de_gta",
@@ -397,7 +411,8 @@
   "dur": 39.5,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE/03_primeiro_dia_de_gta.mp4"
+  "local": "PRONTOS_BISTECONE/03_primeiro_dia_de_gta.mp4",
+  "preview": "previews/bist1__03_primeiro_dia_de_gta.mp4"
  },
  {
   "id": "bist1__04_melhores_momentos_bistecone",
@@ -422,7 +437,8 @@
   "dur": 87.15,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_BISTECONE/04_melhores_momentos_bistecone.mp4"
+  "local": "PRONTOS_BISTECONE/04_melhores_momentos_bistecone.mp4",
+  "preview": "previews/bist1__04_melhores_momentos_bistecone.mp4"
  },
  {
   "id": "cor__01_c02_4min_do_gta6",
@@ -449,7 +465,8 @@
   "dur": 19.4,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/01_c02_4min_do_gta6.mp4"
+  "local": "PRONTOS_CORINGA/01_c02_4min_do_gta6.mp4",
+  "preview": "previews/cor__01_c02_4min_do_gta6.mp4"
  },
  {
   "id": "cor__02_c02_lancamento_gta6",
@@ -476,7 +493,8 @@
   "dur": 44.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/02_c02_lancamento_gta6.mp4"
+  "local": "PRONTOS_CORINGA/02_c02_lancamento_gta6.mp4",
+  "preview": "previews/cor__02_c02_lancamento_gta6.mp4"
  },
  {
   "id": "cor__03_c02_jogo_abre",
@@ -503,7 +521,8 @@
   "dur": 29.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/03_c02_jogo_abre.mp4"
+  "local": "PRONTOS_CORINGA/03_c02_jogo_abre.mp4",
+  "preview": "previews/cor__03_c02_jogo_abre.mp4"
  },
  {
   "id": "cor__04_c02_acao_helicoptero",
@@ -530,7 +549,8 @@
   "dur": 28.5,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/04_c02_acao_helicoptero.mp4"
+  "local": "PRONTOS_CORINGA/04_c02_acao_helicoptero.mp4",
+  "preview": "previews/cor__04_c02_acao_helicoptero.mp4"
  },
  {
   "id": "cor__05_c03_visual_personagem",
@@ -557,7 +577,8 @@
   "dur": 44.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/05_c03_visual_personagem.mp4"
+  "local": "PRONTOS_CORINGA/05_c03_visual_personagem.mp4",
+  "preview": "previews/cor__05_c03_visual_personagem.mp4"
  },
  {
   "id": "cor__06_c03_roubo_policia",
@@ -584,7 +605,8 @@
   "dur": 43.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/06_c03_roubo_policia.mp4"
+  "local": "PRONTOS_CORINGA/06_c03_roubo_policia.mp4",
+  "preview": "previews/cor__06_c03_roubo_policia.mp4"
  },
  {
   "id": "cor__07_c03_conserto_carro",
@@ -611,7 +633,8 @@
   "dur": 34.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/07_c03_conserto_carro.mp4"
+  "local": "PRONTOS_CORINGA/07_c03_conserto_carro.mp4",
+  "preview": "previews/cor__07_c03_conserto_carro.mp4"
  },
  {
   "id": "cor__08_c03_ciclista",
@@ -638,7 +661,8 @@
   "dur": 32.5,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/08_c03_ciclista.mp4"
+  "local": "PRONTOS_CORINGA/08_c03_ciclista.mp4",
+  "preview": "previews/cor__08_c03_ciclista.mp4"
  },
  {
   "id": "cor__09_c04_shortinho",
@@ -665,7 +689,8 @@
   "dur": 33.5,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/09_c04_shortinho.mp4"
+  "local": "PRONTOS_CORINGA/09_c04_shortinho.mp4",
+  "preview": "previews/cor__09_c04_shortinho.mp4"
  },
  {
   "id": "cor__10_c04_mergulho",
@@ -692,7 +717,8 @@
   "dur": 41.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/10_c04_mergulho.mp4"
+  "local": "PRONTOS_CORINGA/10_c04_mergulho.mp4",
+  "preview": "previews/cor__10_c04_mergulho.mp4"
  },
  {
   "id": "cor__11_c04_casa",
@@ -719,7 +745,8 @@
   "dur": 41.5,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/11_c04_casa.mp4"
+  "local": "PRONTOS_CORINGA/11_c04_casa.mp4",
+  "preview": "previews/cor__11_c04_casa.mp4"
  },
  {
   "id": "cor__12_c04_bone",
@@ -746,7 +773,8 @@
   "dur": 21.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/12_c04_bone.mp4"
+  "local": "PRONTOS_CORINGA/12_c04_bone.mp4",
+  "preview": "previews/cor__12_c04_bone.mp4"
  },
  {
   "id": "cor__13_c04_comentarios",
@@ -773,7 +801,8 @@
   "dur": 34.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/13_c04_comentarios.mp4"
+  "local": "PRONTOS_CORINGA/13_c04_comentarios.mp4",
+  "preview": "previews/cor__13_c04_comentarios.mp4"
  },
  {
   "id": "cor__14_c04_mandy_sem_blur",
@@ -799,7 +828,8 @@
   "status": "postado",
   "post": "6b02de72bc636638c11f6807",
   "local": "PRONTOS_CORINGA/14_c04_mandy_sem_blur.mp4",
-  "quando": null
+  "quando": null,
+  "preview": "previews/cor__14_c04_mandy_sem_blur.mp4"
  },
  {
   "id": "cor__15_c04_mandy_reacao_foco_nele",
@@ -826,7 +856,8 @@
   "dur": 27.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/15_c04_mandy_reacao_foco_nele.mp4"
+  "local": "PRONTOS_CORINGA/15_c04_mandy_reacao_foco_nele.mp4",
+  "preview": "previews/cor__15_c04_mandy_reacao_foco_nele.mp4"
  },
  {
   "id": "cor__16_c05_nota_gta6",
@@ -853,7 +884,8 @@
   "dur": 28.5,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/16_c05_nota_gta6.mp4"
+  "local": "PRONTOS_CORINGA/16_c05_nota_gta6.mp4",
+  "preview": "previews/cor__16_c05_nota_gta6.mp4"
  },
  {
   "id": "cor__17_c05_acao_gta6",
@@ -880,7 +912,8 @@
   "dur": 39.0,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_CORINGA/17_c05_acao_gta6.mp4"
+  "local": "PRONTOS_CORINGA/17_c05_acao_gta6.mp4",
+  "preview": "previews/cor__17_c05_acao_gta6.mp4"
  },
  {
   "id": "corest__coringa_estouro_susto_VIclipse",
@@ -905,7 +938,8 @@
   "dur": 6.2,
   "status": "pendente",
   "post": null,
-  "local": "ESTOURO/coringa_estouro_susto_VIclipse.mp4"
+  "local": "ESTOURO/coringa_estouro_susto_VIclipse.mp4",
+  "preview": "previews/corest__coringa_estouro_susto_VIclipse.mp4"
  },
  {
   "id": "corest__coringa_estouro_susto_VIclipse_v2",
@@ -932,7 +966,8 @@
   "dur": 9.9,
   "status": "postado",
   "post": null,
-  "local": "ESTOURO/coringa_estouro_susto_VIclipse_v2.mp4"
+  "local": "ESTOURO/coringa_estouro_susto_VIclipse_v2.mp4",
+  "preview": "previews/corest__coringa_estouro_susto_VIclipse_v2.mp4"
  },
  {
   "id": "narr__01_fim_do_mundo_do_gta6",
@@ -956,7 +991,8 @@
   "dur": 36.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_NARRADOS/01_fim_do_mundo_do_gta6.mp4"
+  "local": "PRONTOS_NARRADOS/01_fim_do_mundo_do_gta6.mp4",
+  "preview": "previews/narr__01_fim_do_mundo_do_gta6.mp4"
  },
  {
   "id": "narr__02_bistecone_primeiro_dia_de_gta6",
@@ -980,7 +1016,8 @@
   "dur": 39.77,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_NARRADOS/02_bistecone_primeiro_dia_de_gta6.mp4"
+  "local": "PRONTOS_NARRADOS/02_bistecone_primeiro_dia_de_gta6.mp4",
+  "preview": "previews/narr__02_bistecone_primeiro_dia_de_gta6.mp4"
  },
  {
   "id": "narr__03_dois_segredos_do_gta6",
@@ -1004,7 +1041,8 @@
   "dur": 26.33,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS_NARRADOS/03_dois_segredos_do_gta6.mp4"
+  "local": "PRONTOS_NARRADOS/03_dois_segredos_do_gta6.mp4",
+  "preview": "previews/narr__03_dois_segredos_do_gta6.mp4"
  },
  {
   "id": "narr__04_coringa_300mil_na_live",
@@ -1031,7 +1069,8 @@
   "dur": 31.77,
   "status": "postado",
   "post": null,
-  "local": "PRONTOS_NARRADOS/04_coringa_300mil_na_live.mp4"
+  "local": "PRONTOS_NARRADOS/04_coringa_300mil_na_live.mp4",
+  "preview": "previews/narr__04_coringa_300mil_na_live.mp4"
  },
  {
   "id": "davy__01_barco_explodiu",
@@ -1056,7 +1095,8 @@
   "dur": 39.4,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS/01_barco_explodiu.mp4"
+  "local": "PRONTOS/01_barco_explodiu.mp4",
+  "preview": "previews/davy__01_barco_explodiu.mp4"
  },
  {
   "id": "davy__02_fim_do_mundo_broxante",
@@ -1081,7 +1121,8 @@
   "dur": 34.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS/02_fim_do_mundo_broxante.mp4"
+  "local": "PRONTOS/02_fim_do_mundo_broxante.mp4",
+  "preview": "previews/davy__02_fim_do_mundo_broxante.mp4"
  },
  {
   "id": "davy__03_barulho_estranho",
@@ -1106,7 +1147,8 @@
   "dur": 21.5,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS/03_barulho_estranho.mp4"
+  "local": "PRONTOS/03_barulho_estranho.mp4",
+  "preview": "previews/davy__03_barulho_estranho.mp4"
  },
  {
   "id": "davy__04_monstro_no_pantano",
@@ -1131,7 +1173,8 @@
   "dur": 32.8,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS/04_monstro_no_pantano.mp4"
+  "local": "PRONTOS/04_monstro_no_pantano.mp4",
+  "preview": "previews/davy__04_monstro_no_pantano.mp4"
  },
  {
   "id": "davy__05_gps_mapa_gta5",
@@ -1156,7 +1199,8 @@
   "dur": 56.7,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS/05_gps_mapa_gta5.mp4"
+  "local": "PRONTOS/05_gps_mapa_gta5.mp4",
+  "preview": "previews/davy__05_gps_mapa_gta5.mp4"
  },
  {
   "id": "davy__06_metacritic_99",
@@ -1181,7 +1225,8 @@
   "dur": 14.0,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS/06_metacritic_99.mp4"
+  "local": "PRONTOS/06_metacritic_99.mp4",
+  "preview": "previews/davy__06_metacritic_99.mp4"
  },
  {
   "id": "davy__07_veio_de_faca",
@@ -1206,7 +1251,8 @@
   "dur": 21.2,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS/07_veio_de_faca.mp4"
+  "local": "PRONTOS/07_veio_de_faca.mp4",
+  "preview": "previews/davy__07_veio_de_faca.mp4"
  },
  {
   "id": "davy__08_limite_do_mapa",
@@ -1231,7 +1277,8 @@
   "dur": 36.7,
   "status": "pendente",
   "post": null,
-  "local": "PRONTOS/08_limite_do_mapa.mp4"
+  "local": "PRONTOS/08_limite_do_mapa.mp4",
+  "preview": "previews/davy__08_limite_do_mapa.mp4"
  },
  {
   "id": "pia__reacao_bistecone_cena_da_pia",
@@ -1255,7 +1302,8 @@
   "dur": 11.9,
   "status": "pendente",
   "post": null,
-  "local": "REACOES_PIA/entrega/reacao_bistecone_cena_da_pia.mp4"
+  "local": "REACOES_PIA/entrega/reacao_bistecone_cena_da_pia.mp4",
+  "preview": "previews/pia__reacao_bistecone_cena_da_pia.mp4"
  },
  {
   "id": "pia__reacao_bistecone_cena_da_pia_LONGA",
@@ -1279,7 +1327,8 @@
   "dur": 24.0,
   "status": "pendente",
   "post": null,
-  "local": "REACOES_PIA/entrega/reacao_bistecone_cena_da_pia_LONGA.mp4"
+  "local": "REACOES_PIA/entrega/reacao_bistecone_cena_da_pia_LONGA.mp4",
+  "preview": "previews/pia__reacao_bistecone_cena_da_pia_LONGA.mp4"
  },
  {
   "id": "pia__reacao_paulinho_cena_da_pia",
@@ -1303,7 +1352,8 @@
   "dur": 18.6,
   "status": "pendente",
   "post": null,
-  "local": "REACOES_PIA/entrega/reacao_paulinho_cena_da_pia.mp4"
+  "local": "REACOES_PIA/entrega/reacao_paulinho_cena_da_pia.mp4",
+  "preview": "previews/pia__reacao_paulinho_cena_da_pia.mp4"
  },
  {
   "id": "dog__cachorro_jetski_VIclipse",
@@ -1328,6 +1378,7 @@
   "dur": 42.4,
   "status": "pendente",
   "post": null,
-  "local": "cachorro/cachorro_jetski_VIclipse.mp4"
+  "local": "cachorro/cachorro_jetski_VIclipse.mp4",
+  "preview": "previews/dog__cachorro_jetski_VIclipse.mp4"
  }
 ]

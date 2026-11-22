@@ -35,7 +35,7 @@ function desenha() {
 function card(c) {
   const editTexto = c.texto_editavel;
   return `<div class="card" id="c-${c.id}">
-  <video controls preload="metadata" playsinline ${c.capa ? `poster="${esc(c.capa)}"` : ""} src="${esc(c.url)}"></video>
+  <video controls preload="metadata" playsinline ${c.capa ? `poster="${esc(c.capa)}"` : ""} src="${esc(c.preview || c.url)}"></video>
   <div class="body">
     <div class="top"><span class="name">${esc(c.titulo_curto || c.arquivo)}</span><span class="st ${c.status}">${c.status}</span></div>
     <div class="dur">${esc(c.streamer)} · ${esc(c.estilo)} · ${fmt(c.dur)} s${c.post ? ` · post ${esc(c.post)}` : ""}</div>

@@ -1,2 +1,3 @@
 _subir.txt
 *.mp4
+!previews/*.mp4
