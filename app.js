@@ -5,6 +5,11 @@ const REPO = location.hostname.endsWith("github.io")
 const STATUS = [["pendente", "Para aprovar"], ["aprovado", "Aprovados (na fila)"], ["postado", "Postados"], ["reprovado", "Reprovados"], ["todos", "Todos"]];
 let CAT = [], aba = "pendente", streamer = "todos";
 
+// "NOVO": corte colocado pelo robo que voce ainda nao deu play (guardado neste aparelho)
+const KVISTO = "viclipse_vistos";
+function vistos() { try { return JSON.parse(localStorage.getItem(KVISTO) || "[]"); } catch (e) { return []; } }
+function ehNovo(c) { return !!c.novo && !vistos().includes(c.id); }
+function marcaVisto(c) { try { const v = vistos(); if (!v.includes(c.id)) { v.push(c.id); localStorage.setItem(KVISTO, JSON.stringify(v)); } } catch (e) {} }
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const fmt = s => (Math.round(s * 10) / 10).toFixed(1);
 
@@ -29,15 +34,16 @@ function desenha() {
   const g = document.getElementById("grid");
   const itens = CAT.filter(c => (aba === "todos" || c.status === aba) && (streamer === "todos" || c.streamer === streamer));
   if (!itens.length) { g.innerHTML = `<div class="empty">Nada aqui.</div>`; return; }
+  itens.sort((a, b) => ehNovo(b) - ehNovo(a));
   g.innerHTML = itens.map(card).join("");
   itens.forEach(liga);
 }
 function card(c) {
   const editTexto = c.texto_editavel;
-  return `<div class="card" id="c-${c.id}">
+  return `<div class="card ${ehNovo(c) ? "novo" : ""}" id="c-${c.id}">
   <video controls preload="metadata" playsinline ${c.capa ? `poster="${esc(c.capa)}"` : ""} src="${esc(c.preview || c.url)}"></video>
   <div class="body">
-    <div class="top"><span class="name">${esc(c.titulo_curto || c.arquivo)}</span><span class="st ${c.status}">${c.status}</span></div>
+    <div class="top"><span class="name">${ehNovo(c) ? '<span class="tagnovo">NOVO</span> ' : ""}${esc(c.titulo_curto || c.arquivo)}</span><span class="st ${c.status}">${c.status}</span></div>
     <div class="dur">${esc(c.streamer)} · ${esc(c.estilo)} · ${fmt(c.dur)} s${c.post ? ` · post ${esc(c.post)}` : ""}</div>
     ${editTexto ? `<div><label>${esc(c.texto_rotulo || "Texto no vídeo")}</label><textarea data-f="texto_video">${esc(c.texto_video)}</textarea></div>` : ""}
     <div><label>Título (YouTube Shorts)</label><input data-f="titulo" value="${esc(c.titulo)}"></div>
@@ -62,6 +68,7 @@ function card(c) {
 function val(el, f) { return el.querySelector(`[data-f="${f}"]`); }
 function liga(c) {
   const el = document.getElementById("c-" + c.id), v = el.querySelector("video");
+  v.addEventListener("play", () => { marcaVisto(c); el.classList.remove("novo"); const t = el.querySelector(".tagnovo"); if (t) t.remove(); }, { once: true });
   el.querySelector('[data-a="mi"]').onclick = () => val(el, "ini").value = fmt(v.currentTime);
   el.querySelector('[data-a="mf"]').onclick = () => val(el, "fim").value = fmt(v.currentTime);
   el.querySelector('[data-a="pv"]').onclick = () => {

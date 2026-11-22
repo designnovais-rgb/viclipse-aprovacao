@@ -73,13 +73,40 @@ def faixa_meme(txt, bh=190):
     for i, l in enumerate(linhas): d.text(((W - d.textlength(l, font=f)) / 2, y0 + i * lh), l, font=f, fill=(0, 0, 0))
     return im
 
+def banner_noticia(txt, bh=330):
+    import random
+    rnd = random.Random(7)
+    def borda(y0, amp):
+        pts = []; y = y0
+        for xx in range(-20, W + 40, 18):
+            y += rnd.uniform(-amp, amp); y = y0 + (y - y0) * 0.82; pts.append((xx, y))
+        return pts
+    im = Image.new("RGBA", (W, bh), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    top = borda(26, 9); bot = borda(bh - 30, 9)
+    d.polygon([(x_, y_ - 9) for x_, y_ in top] + [(x_, y_ + 6) for x_, y_ in reversed(bot)], fill=(245, 240, 232, 255))
+    red = Image.new("RGBA", (W, bh)); rd = ImageDraw.Draw(red)
+    for yy in range(bh):
+        k = abs(yy - bh / 2) / (bh / 2); rd.line([(0, yy), (W, yy)], fill=(int(205 - 45 * k * k), 0, int(6 + 4 * k), 255))
+    mask = Image.new("L", (W, bh), 0); ImageDraw.Draw(mask).polygon(top + list(reversed(bot)), fill=255); im.paste(red, (0, 0), mask)
+    fs = 70; f = ImageFont.truetype(B, fs)
+    ws = txt.upper().split()
+    m = min(range(1, max(2, len(ws))), key=lambda i: max(len(" ".join(ws[:i])), len(" ".join(ws[i:])))) if len(ws) > 1 else 1
+    linhas = [" ".join(ws[:m]), " ".join(ws[m:])] if len(ws) > 1 else [txt.upper()]
+    while max(d.textlength(l, font=f) for l in linhas) > W - 80 and fs > 38:
+        fs -= 2; f = ImageFont.truetype(B, fs)
+    y0 = (bh - len(linhas) * int(fs * 1.18)) / 2 - 2
+    for i_, l in enumerate(linhas):
+        d.text(((W - d.textlength(l, font=f)) / 2, y0 + i_ * int(fs * 1.18)), l, font=f, fill=(255, 255, 255, 255), stroke_width=5, stroke_fill=(0, 0, 0, 255))
+    return im
+
 saida = src
 if precisa:
     entradas = ["-i", src]; dur = fim - ini
     vf = f"[0:v]trim=start={ini:.3f}:end={fim:.3f},setpts=PTS-STARTPTS[v0]"
     if mudou_texto:
-        png = (cabecalho_tweet(novo_texto) if item["estilo"] == "tweet" else faixa_meme(novo_texto)); png.save("texto.png")
-        entradas += ["-loop", "1", "-i", "texto.png"]; vf += ";[v0][1:v]overlay=0:0:shortest=1[v1]"; vo = "[v1]"
+        est = item["estilo"]
+        png = cabecalho_tweet(novo_texto) if est == "tweet" else (banner_noticia(novo_texto) if est == "noticia" else faixa_meme(novo_texto)); png.save("texto.png")
+        entradas += ["-loop", "1", "-i", "texto.png"]; vf += f";[v0][1:v]overlay=0:{865 if est == 'noticia' else 0}:shortest=1[v1]"; vo = "[v1]"
     else: vo = "[v0]"
     af = f"[0:a]atrim=start={ini:.3f}:end={fim:.3f},asetpts=PTS-STARTPTS,aresample=44100:async=1:first_pts=0,afade=t=in:st=0:d=0.03,afade=t=out:st={max(0, dur - 0.3):.2f}:d=0.3,loudnorm=I=-15:TP=-1.0:LRA=11[a0]"
     saida = re.sub(r"\.mp4$", "", item["asset"]) + "_editado.mp4"
