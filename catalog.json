@@ -796,9 +796,10 @@
   "capa": "",
   "capa_arquivo": "",
   "dur": 39.5,
-  "status": "pendente",
-  "post": null,
-  "local": "PRONTOS_CORINGA/14_c04_mandy_sem_blur.mp4"
+  "status": "postado",
+  "post": "6b02de72bc636638c11f6807",
+  "local": "PRONTOS_CORINGA/14_c04_mandy_sem_blur.mp4",
+  "quando": null
  },
  {
   "id": "cor__15_c04_mandy_reacao_foco_nele",
