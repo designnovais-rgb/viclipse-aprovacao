@@ -177,8 +177,8 @@
  {
   "id": "novo20261122__b1_tigre",
   "arquivo": "b1_tigre.mp4",
-  "asset": "novo20261122__b1_tigre.mp4",
-  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/novo20261122__b1_tigre.mp4",
+  "asset": "novo20261122__b1_tigre_editado.mp4",
+  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/novo20261122__b1_tigre_editado.mp4",
   "streamer": "Coringa",
   "estilo": "noticia",
   "titulo_curto": "Tigre do GTA 6",
@@ -191,17 +191,18 @@
    "tigre",
    "missao"
   ],
-  "texto_video": "O TIGRE DO GTA 6 NÃO SENTE O CHEIRO DELE",
+  "texto_video": "injogável ",
   "texto_rotulo": "Título na tarja vermelha",
   "texto_editavel": true,
   "capa": "",
   "capa_arquivo": "",
   "dur": 68.0,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b04a305ad29ca2d1ca90492",
   "local": "NOVOS/2026-11-22/b1_tigre.mp4",
-  "preview": "previews/novo20261122__b1_tigre.mp4"
+  "preview": "previews/novo20261122__b1_tigre_e.mp4",
+  "quando": null
  },
  {
   "id": "novo20261122__a3_greve_chat",
