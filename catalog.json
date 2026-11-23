@@ -31,8 +31,8 @@
  {
   "id": "novo20261122__d3_forca",
   "arquivo": "d3_forca.mp4",
-  "asset": "novo20261122__d3_forca.mp4",
-  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/novo20261122__d3_forca.mp4",
+  "asset": "novo20261122__d3_forca_editado.mp4",
+  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/novo20261122__d3_forca_editado.mp4",
   "streamer": "Coringa",
   "estilo": "noticia",
   "titulo_curto": "Mulher mais forte",
@@ -45,17 +45,18 @@
    "humor",
    "treino"
   ],
-  "texto_video": "NO GTA 6 A MULHER É MUITO MAIS FORTE QUE O JASON",
+  "texto_video": "A mulher mais forte do jogo!",
   "texto_rotulo": "Título na tarja vermelha",
   "texto_editavel": true,
   "capa": "",
   "capa_arquivo": "",
   "dur": 60.0,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b04a056d7181d1e08230525",
   "local": "NOVOS/2026-11-22/d3_forca.mp4",
-  "preview": "previews/novo20261122__d3_forca.mp4"
+  "preview": "previews/novo20261122__d3_forca_e.mp4",
+  "quando": null
  },
  {
   "id": "novo20261122__d2_suada",
