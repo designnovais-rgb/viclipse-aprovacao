@@ -90,8 +90,8 @@
  {
   "id": "novo20261123__coringa_lucia_cabelo",
   "arquivo": "coringa_lucia_cabelo.mp4",
-  "asset": "novo20261123__coringa_lucia_cabelo.mp4",
-  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/novo20261123__coringa_lucia_cabelo.mp4",
+  "asset": "novo20261123__coringa_lucia_cabelo_editado.mp4",
+  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/novo20261123__coringa_lucia_cabelo_editado.mp4",
   "streamer": "Coringa",
   "estilo": "tweet",
   "titulo_curto": "Lucia e o cabelo",
@@ -104,17 +104,18 @@
    "humor",
    "detalhe"
   ],
-  "texto_video": "o Coringa jura que o que muda o humor da Lucia no GTA 6 é o cabelo",
+  "texto_video": "Ô ô ô ô ô ô ô",
   "texto_rotulo": "Frase do post (no topo do vídeo)",
   "texto_editavel": true,
   "capa": "assets/capas/novo20261123__coringa_lucia_cabelo.jpg",
   "capa_arquivo": "assets/capas/novo20261123__coringa_lucia_cabelo.jpg",
   "dur": 42.5,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b04f71543e2934036b4f0db",
   "local": "NOVOS/2026-11-23/coringa_lucia_cabelo.mp4",
-  "preview": "previews/novo20261123__coringa_lucia_cabelo.mp4"
+  "preview": "previews/novo20261123__coringa_lucia_cabelo_e.mp4",
+  "quando": null
  },
  {
   "id": "novo20261123__coringa_final_bom_dinheiro",
