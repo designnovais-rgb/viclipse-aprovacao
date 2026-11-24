@@ -22,11 +22,12 @@
   "capa": "assets/capas/novo20261124__coringa_sinuca_pilantragem.jpg",
   "capa_arquivo": "assets/capas/novo20261124__coringa_sinuca_pilantragem.jpg",
   "dur": 41.5,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b0594488c2c73fc6fc05fd7",
   "local": "NOVOS/2026-11-24/coringa_sinuca_pilantragem.mp4",
-  "preview": "previews/novo20261124__coringa_sinuca_pilantragem.mp4"
+  "preview": "previews/novo20261124__coringa_sinuca_pilantragem.mp4",
+  "quando": null
  },
  {
   "id": "novo20261124__coringa_pos_credito",
