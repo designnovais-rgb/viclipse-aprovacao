@@ -458,11 +458,12 @@
   "capa": "",
   "capa_arquivo": "",
   "dur": 58.3,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b04ef8c547a20994155f8ab",
   "local": "NOVOS/2026-11-23/bistecone_cigarro.mp4",
-  "preview": "previews/novo20261123__bistecone_cigarro.mp4"
+  "preview": "previews/novo20261123__bistecone_cigarro.mp4",
+  "quando": null
  },
  {
   "id": "novo20261123__bistecone_banco",
