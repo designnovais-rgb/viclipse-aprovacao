@@ -226,11 +226,12 @@
   "capa": "assets/capas/novo20261124__coringa_final_brutal.jpg",
   "capa_arquivo": "assets/capas/novo20261124__coringa_final_brutal.jpg",
   "dur": 45.0,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b0592e80109c9110589d76b",
   "local": "NOVOS/2026-11-24/coringa_final_brutal.mp4",
-  "preview": "previews/novo20261124__coringa_final_brutal.mp4"
+  "preview": "previews/novo20261124__coringa_final_brutal.mp4",
+  "quando": null
  },
  {
   "id": "novo20261124__coringa_fianca_2milhoes",
