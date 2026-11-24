@@ -51,11 +51,12 @@
   "capa": "assets/capas/novo20261124__coringa_pos_credito.jpg",
   "capa_arquivo": "assets/capas/novo20261124__coringa_pos_credito.jpg",
   "dur": 49.0,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b0591829066b6de14ce1c7d",
   "local": "NOVOS/2026-11-24/coringa_pos_credito.mp4",
-  "preview": "previews/novo20261124__coringa_pos_credito.mp4"
+  "preview": "previews/novo20261124__coringa_pos_credito.mp4",
+  "quando": null
  },
  {
   "id": "novo20261124__coringa_policia_pilantra",
