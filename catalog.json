@@ -555,8 +555,8 @@
  {
   "id": "novo20261124__bistecone_facaol",
   "arquivo": "bistecone_facaol.mp4",
-  "asset": "novo20261124__bistecone_facaol.mp4",
-  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/novo20261124__bistecone_facaol.mp4",
+  "asset": "novo20261124__bistecone_facaol_editado.mp4",
+  "url": "https://github.com/designnovais-rgb/viclipse-aprovacao/releases/download/cortes/novo20261124__bistecone_facaol_editado.mp4",
   "streamer": "Bistecone",
   "estilo": "noticia",
   "titulo_curto": "Faz o L, Lúcia!",
@@ -569,17 +569,18 @@
    "assalto",
    "kick"
   ],
-  "texto_video": "“FAZ O L, LÚCIA!” A FUGA DO ASSALTO AO BANCO",
+  "texto_video": "“FAZ O L, LÚCIA!” kkkkkkk",
   "texto_rotulo": "Título na tarja vermelha",
   "texto_editavel": true,
   "capa": "assets/capas/novo20261124__bistecone_facaol.jpg",
   "capa_arquivo": "assets/capas/novo20261124__bistecone_facaol.jpg",
   "dur": 37.0,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b05939c2919b832ea821691",
   "local": "NOVOS/2026-11-24/bistecone_facaol.mp4",
-  "preview": "previews/novo20261124__bistecone_facaol.mp4"
+  "preview": "previews/novo20261124__bistecone_facaol_e.mp4",
+  "quando": null
  },
  {
   "id": "novo20261124__bistecone_camera",
