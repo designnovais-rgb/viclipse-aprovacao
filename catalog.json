@@ -489,11 +489,12 @@
   "capa": "",
   "capa_arquivo": "",
   "dur": 54.5,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b0503a5446f8abae985c79c",
   "local": "NOVOS/2026-11-23/bistecone_banco.mp4",
-  "preview": "previews/novo20261123__bistecone_banco.mp4"
+  "preview": "previews/novo20261123__bistecone_banco.mp4",
+  "quando": null
  },
  {
   "id": "novo20261122__n8_banho_bigfoot",
