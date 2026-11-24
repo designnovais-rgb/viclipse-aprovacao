@@ -51,11 +51,12 @@
   "capa": "assets/capas/novo20261123__coringa_plano_endgame.jpg",
   "capa_arquivo": "assets/capas/novo20261123__coringa_plano_endgame.jpg",
   "dur": 27.7,
-  "status": "pendente",
+  "status": "postado",
   "novo": true,
-  "post": null,
+  "post": "6b04e0b18233403b5f7ae001",
   "local": "NOVOS/2026-11-23/coringa_plano_endgame.mp4",
-  "preview": "previews/novo20261123__coringa_plano_endgame.mp4"
+  "preview": "previews/novo20261123__coringa_plano_endgame.mp4",
+  "quando": null
  },
  {
   "id": "novo20261123__coringa_perseguicao_carro_forte",
